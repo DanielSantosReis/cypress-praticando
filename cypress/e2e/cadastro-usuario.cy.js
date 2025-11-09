@@ -1,7 +1,7 @@
 /// <reference types = "cypress"/>
 
 import commumPage from "../support/pages/commum_page"
-
+import cadastroUsuarioPage from "../support/pages/cadastro_usuario_page"
 
 describe('Cadastro de Usuario', () => {
 
@@ -10,8 +10,9 @@ describe('Cadastro de Usuario', () => {
 
     })
 
-    it('Campo Nome vazio', () => {
-    
+    it.only('Campo Nome vazio', () => {
+        cadastroUsuarioPage.clicarCadastrar()
+        cadastroUsuarioPage.validarMensagemErro('O campo nome deve ser preenchido') 
     })
 
     it('Campo E-mail vazio', () => {
