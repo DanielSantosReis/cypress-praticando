@@ -8,6 +8,4 @@ export default {
         cy.get('.fa-lock')
             .click()
     }
-
-
 }

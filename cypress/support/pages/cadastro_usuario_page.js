@@ -8,11 +8,16 @@ export default {
             .click()
     },
 
+   // validarMensagemErro(mensagem){
+        // cy.get('.errorLabel')
+        //     .then((element) => {
+        //       expect(element).to.be.visible
+        //     expect(element.text()).eq('O campo nome deve ser preenchido')
+        // })}
+
     validarMensagemErro(mensagem){
         cy.get('.errorLabel')
-            .then((element) => {
-                expect(element).to.be.visible
-                expect(element.text()).eq('O campo nome deve ser preenchido')
-            })
+            .should('be.visible')
+                .should('have.text',  mensagem)
     }
 }
